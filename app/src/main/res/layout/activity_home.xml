@@ -39,6 +39,7 @@
                 android:textColor="@color/white"
                 android:textSize="38sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
                 app:layout_constraintBottom_toBottomOf="@+id/backgroundHeaderView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +53,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text=""
+                android:fontFamily="@font/plus_jakarta_sans_medium"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Logout"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
