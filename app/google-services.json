@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "404880021730",
+    "project_id": "mvvm-android-kotlin",
+    "storage_bucket": "mvvm-android-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404880021730:android:557d5df08458e8bd8ba6bb",
+        "android_client_info": {
+          "package_name": "com.innovation.mvvm_android_kotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq_dE-H1-c5bx7N1mnWnzzvSXio8XOgMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

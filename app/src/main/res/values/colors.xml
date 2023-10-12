@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="space_cadet_color">#242E49</color>
+    <color name="cultured_color">#F2F5F9</color>
+    <color name="brandeis_blue_color">#0F67FE</color>
+    <color name="lavender_gray">#BEC5D2</color>
+    <color name="magic_potion">#FA4D5E</color>
+    <color name="roman_silver">#818BA0</color>
+</resources>

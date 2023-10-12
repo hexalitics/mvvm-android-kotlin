@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.innovation.mvvm_android_kotlin.ui.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cultured_color"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/backgroundHeaderView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/bg_header_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAddImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvSignInLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivAddImage" />
+
+            <TextView
+                android:id="@+id/tvSignInMsgLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sign in and get your health personalized with our AI Technology."
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSignInLabel" />
+
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="Email Address"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backgroundHeaderView" />
+
+            <EditText
+                android:id="@+id/etEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="32dp"
+                android:background="@drawable/bg_edit_text"
+                android:ellipsize="end"
+                android:hint="Enter email address"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawablePadding="8dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp"
+                android:text="@={loginViewModel.emailAddress}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+
+            <TextView
+                android:id="@+id/tvPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEmailAddress" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="32dp"
+                android:background="@drawable/bg_edit_text"
+                android:ellipsize="end"
+                android:hint="Enter password"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_lock"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:inputType="textPassword|textNoSuggestions"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp"
+                android:text="@={loginViewModel.password}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+            <ImageView
+                android:id="@+id/ivShowHidePassword"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:onClick="@{()-> loginViewModel.hideAndShowPassword()}"
+                android:src="@drawable/icon__eye_off"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/etPassword"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintTop_toTopOf="@+id/etPassword" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="32dp"
+                android:onClick="@{()-> loginViewModel.performLogin()}"
+                app:strokeColor="@color/brandeis_blue_color"
+                app:cardBackgroundColor="@color/brandeis_blue_color"
+                app:layout_constraintTop_toBottomOf="@+id/etPassword">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign In"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_btn_plus"/>
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <View
+                android:id="@+id/viewDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="48dp"
+                android:background="@color/lavender_gray"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+                tools:layout_editor_absoluteX="32dp" />
+
+
+            <TextView
+                android:id="@+id/tvOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Or"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@color/cultured_color"
+                android:paddingHorizontal="4dp"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                app:layout_constraintBottom_toBottomOf="@+id/viewDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewDivider" />
+
+
+            <ImageView
+                android:id="@+id/ivGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_google"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="@+id/viewDivider"
+                app:layout_constraintStart_toStartOf="@+id/viewDivider"
+                app:layout_constraintTop_toBottomOf="@+id/viewDivider" />
+
+
+            <TextView
+                android:id="@+id/tvSignUpLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text="Don’t have an account?"
+                android:textColor="@color/roman_silver"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvSignUp"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text=" Sign Up."
+                android:textStyle="bold"
+                android:textColor="@color/magic_potion"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvSignUpLabel" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
