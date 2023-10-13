@@ -45,7 +45,7 @@ The Model View ViewModel (MVVM) is an architectural pattern used in software eng
 
 [![2](https://camo.githubusercontent.com/81cc5c093bdd9590ee9b72fde98819e5da3e8f06f782973c2c37643f8f17b78d/68747470733a2f2f696d6167652e6962622e636f2f6e6d68784e4b2f322e706e67)](https://camo.githubusercontent.com/81cc5c093bdd9590ee9b72fde98819e5da3e8f06f782973c2c37643f8f17b78d/68747470733a2f2f696d6167652e6962622e636f2f6e6d68784e4b2f322e706e67)
 
-[**What is DataBinding?**](#what-is-databinding)
+# What is DataBinding
 ------------------------------------------------
 
 **Answer:** The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically and many more.
