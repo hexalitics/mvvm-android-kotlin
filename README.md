@@ -1,5 +1,7 @@
 # Login Example with MVVM, DataBinding With LiveData
 
+[![3](https://camo.githubusercontent.com/48e678bac063a060202b79169f65a1ca91b8701e2ad63434e222833602dc5531/68747470733a2f2f707265766965772e6962622e636f2f6964444b6d652f332e706e67)](https://camo.githubusercontent.com/48e678bac063a060202b79169f65a1ca91b8701e2ad63434e222833602dc5531/68747470733a2f2f707265766965772e6962622e636f2f6964444b6d652f332e706e67)
+
 This is a very simple **Login Example** using **MVVM pattern and DataBinding and LiveData** in Android. It takes input from the UI using DataBinding **"@="**, stores it in LiveData and displays back on the UI.
 
 This example is for those who want to learn the easiest way to get data from UI. This is useful in many ways such as Saving Development Time, Code Reusability, Validations etc. No wonder it is being used all over Android Community.
@@ -49,8 +51,6 @@ The Model View ViewModel (MVVM) is an architectural pattern used in software eng
 ------------------------------------------------
 
 **Answer:** The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically and many more.
-
-[![3](https://camo.githubusercontent.com/48e678bac063a060202b79169f65a1ca91b8701e2ad63434e222833602dc5531/68747470733a2f2f707265766965772e6962622e636f2f6964444b6d652f332e706e67)](https://camo.githubusercontent.com/48e678bac063a060202b79169f65a1ca91b8701e2ad63434e222833602dc5531/68747470733a2f2f707265766965772e6962622e636f2f6964444b6d652f332e706e67)
 
 # What is LiveData
 
