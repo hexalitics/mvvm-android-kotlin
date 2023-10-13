@@ -1,5 +1,4 @@
-[Login Example with MVVM, DataBinding With LiveData](#login-example-with-mvvm-databinding-with-livedata)
-========================================================================================================
+# Login Example with MVVM, DataBinding With LiveData
 
 This is a very simple **Login Example** using **MVVM pattern and DataBinding and LiveData** in Android. It takes input from the UI using DataBinding **"@="**, stores it in LiveData and displays back on the UI.
 
@@ -7,14 +6,12 @@ This example is for those who want to learn the easiest way to get data from UI.
 
 So let's get started on using these technologies together in a single application:
 
-1.  What is MVVM?
-2.  What is DataBinding?
-3.  What is LiveData?
-4.  Implementation Step-by-Step
-5.  Conclusion
+1. What is MVVM?
+2. What is DataBinding?
+3. What is LiveData?
+4. Conclusion
 
-[**What is MVVM?**](#what-is-mvvm)
-----------------------------------
+# What is MVVM
 
 **Answer:** MVVM is a design pattern for organizing GUI applications that has become popular on Android.
 
@@ -55,8 +52,7 @@ The Model View ViewModel (MVVM) is an architectural pattern used in software eng
 
 [![3](https://camo.githubusercontent.com/48e678bac063a060202b79169f65a1ca91b8701e2ad63434e222833602dc5531/68747470733a2f2f707265766965772e6962622e636f2f6964444b6d652f332e706e67)](https://camo.githubusercontent.com/48e678bac063a060202b79169f65a1ca91b8701e2ad63434e222833602dc5531/68747470733a2f2f707265766965772e6962622e636f2f6964444b6d652f332e706e67)
 
-[**What is LiveData?**](#what-is-livedata)
-------------------------------------------
+# What is LiveData
 
 **Answer:** LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.
 
@@ -76,12 +72,10 @@ Using LiveData provides the following advantages:
 
 **Sharing resources:** You can extend a LiveData object using the singleton pattern to wrap system services so that they can be shared in your app. The LiveData object connects to the system service once, and then any observer that needs the resource can just watch the LiveData object. For more information, see Extend LiveData.
 
-[![4](https://camo.githubusercontent.com/39c9eba4ceeeb2e5a8e74958e6a571c0f6e8fd2237d4c58d19b7117c4892a6aa/68747470733a2f2f707265766965772e6962622e636f2f6278307152652f342e706e67)](https://camo.githubusercontent.com/39c9eba4ceeeb2e5a8e74958e6a571c0f6e8fd2237d4c58d19b7117c4892a6aa/68747470733a2f2f707265766965772e6962622e636f2f6278307152652f342e706e67)
 
-[**Implementation Step-by-Step**](#implementation-step-by-step)
----------------------------------------------------------------
+# Implementation
 
-### [**Step1:** Adding DataBinding and Implementations in your Gradle File:](#step1-adding-databinding-and-implementations-in-your-gradle-file)
+Adding DataBinding and Implementations in your Gradle File
 
 android {
     ...
@@ -100,7 +94,6 @@ android {
     implementation "androidx.fragment:fragment-ktx:1.6.0"
 
 
-[**Conclusion**](#conclusion)
------------------------------
+# Conclusion
 
 Hopefully this guide should have helped you in making your tasks really easier in terms of many things, such as: eliminating **findViewById(...)** and many more.
