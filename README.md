@@ -72,28 +72,6 @@ Using LiveData provides the following advantages:
 
 **Sharing resources:** You can extend a LiveData object using the singleton pattern to wrap system services so that they can be shared in your app. The LiveData object connects to the system service once, and then any observer that needs the resource can just watch the LiveData object. For more information, see Extend LiveData.
 
-
-# Implementation
-
-Adding DataBinding and Implementations in your Gradle File
-
-android {
-    ...
-    buildFeatures {
-        viewBinding true
-    }
-    dataBinding {
-        enabled = true
-    }
-}
-
-    def lifecycle_version = "2.2.0"
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-    implementation "androidx.activity:activity-ktx:1.7.2"
-    implementation "androidx.fragment:fragment-ktx:1.6.0"
-
-
 # Conclusion
 
 Hopefully this guide should have helped you in making your tasks really easier in terms of many things, such as: eliminating **findViewById(...)** and many more.
