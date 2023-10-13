@@ -1,6 +1,7 @@
 package com.innovation.mvvm_android_kotlin.ui.viewmodel
 
 import android.util.Patterns
+import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,6 +16,7 @@ class LoginViewModel : ViewModel() {
     val emailAddress = ObservableField<String>()
     val password = ObservableField<String>()
     val isEmailAddressInvalid = MutableLiveData<Boolean>()
+    val focus = true
 
     /**
      * This method Perform login after validate data.
@@ -55,7 +57,17 @@ class LoginViewModel : ViewModel() {
             textFieldValidation.postValue("Please enter password")
             false
         } else {
+            isEmailAddressInvalid.postValue(false)
             true
+        }
+    }
+
+
+    val onFocusChange = View.OnFocusChangeListener { view, hasFocus ->
+        if (hasFocus) {
+            view.setBackgroundResource(R.drawable.bg_focus_edit_text)
+        } else {
+            view.setBackgroundResource(R.drawable.bg_edit_text)
         }
     }
 

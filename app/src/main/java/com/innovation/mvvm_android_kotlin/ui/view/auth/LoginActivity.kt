@@ -70,7 +70,6 @@ class LoginActivity : BaseActivity() {
             it?.let {
                 if (it) {
                     mContext.showToast("Login Successfully.")
-
                 }
             }
         }
