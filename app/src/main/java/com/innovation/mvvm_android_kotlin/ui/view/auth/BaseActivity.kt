@@ -11,6 +11,14 @@ import androidx.core.view.WindowInsetsControllerCompat
 open class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        transparentStatusBar()
+    }
+
+    /**
+     * This method user for Transparent status bar.
+     *
+     */
+    private fun transparentStatusBar(){
         val window: Window = window
         val decorView: View = window.decorView
         val wic = WindowInsetsControllerCompat(window, decorView)

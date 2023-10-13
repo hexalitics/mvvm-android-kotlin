@@ -60,10 +60,6 @@ class HomeActivity : BaseActivity() {
                     SocialAuth.GOOGLE -> {
                         binding.tvUserName.text = it.name
                         binding.tvEmail.text = it.emailAddress
-                       /* Glide.with(this@DashboardActivity)
-                            .load(it.profile)
-                            .centerCrop()
-                            .into(binding.ivUserImage)*/
                     }
                 }
             }

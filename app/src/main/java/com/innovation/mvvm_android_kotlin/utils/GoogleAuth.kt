@@ -2,6 +2,7 @@ package com.innovation.mvvm_android_kotlin.utils
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
@@ -18,7 +19,9 @@ open class GoogleAuth {
 
     class Builder(private val activity: Activity) {
         private var mGoogleSignInClient: GoogleSignInClient
-
+        /**
+         * Initialize Google SignIn Options.
+         */
         init {
             val gso = GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -28,11 +31,21 @@ open class GoogleAuth {
             mGoogleSignInClient = GoogleSignIn.getClient(activity, gso)
         }
 
+        /**
+         * Here perform google signIn
+         *
+         * @param resultLauncher
+         */
         fun signIn(resultLauncher: ActivityResultLauncher<Intent>) {
             val signInIntent = mGoogleSignInClient.signInIntent
             resultLauncher.launch(signInIntent)
         }
 
+        /**
+         * Check user already google signIn.
+         *
+         * @return
+         */
         fun isUserLogin(): Builder {
             val account = GoogleSignIn.getLastSignedInAccount(activity)
             if (account != null) {
@@ -49,6 +62,10 @@ open class GoogleAuth {
             return this
         }
 
+        /**
+         * Here intent for home activity.
+         *
+         */
         private fun gotoHomeScreen() {
             activity.startActivity(
                 Intent(
@@ -59,6 +76,10 @@ open class GoogleAuth {
             activity.finish()
         }
 
+        /**
+         * Here perform signOut from Google.
+         *
+         */
         fun signOutGoogle() {
             mGoogleSignInClient.signOut().addOnCompleteListener(
                 activity
@@ -68,6 +89,11 @@ open class GoogleAuth {
             }
         }
 
+        /**
+         * Here Handle sign in result.
+         *
+         * @param result
+         */
         fun handleSignInResult(result: ActivityResult) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
             task.addOnCompleteListener {
@@ -86,11 +112,11 @@ open class GoogleAuth {
                             gotoHomeScreen()
                         }
                     } catch (e: ApiException) {
-                        //Toast.makeText(activity, "${e.status.statusMessage}", Toast.LENGTH_SHORT).show()
+                        Log.e("ApiException","${e.status.statusMessage}")
                     }
                 }
             }.addOnFailureListener {
-                //Toast.makeText(activity, "${it.message}", Toast.LENGTH_SHORT).show()
+                Log.e("FailureException","${it.message}")
             }
         }
     }
